@@ -7,16 +7,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         double salario_1 = receberSalarioInput(scanner);
-//        double salario_2 = receberSalarioInput(scanner);
-//        double salario_3 = receberSalarioInput(scanner);
-//        double salario_4 = receberSalarioInput(scanner);
-//        double salario_5 = receberSalarioInput(scanner);
+        double salario_2 = receberSalarioInput(scanner);
+        double salario_3 = receberSalarioInput(scanner);
+        double salario_4 = receberSalarioInput(scanner);
+        double salario_5 = receberSalarioInput(scanner);
 
         calcularSalarioLiquido(salario_1);
-//        calcularSalarioLiquido(salario_2);
-//        calcularSalarioLiquido(salario_3);
-//        calcularSalarioLiquido(salario_4);
-//        calcularSalarioLiquido(salario_5);
+        calcularSalarioLiquido(salario_2);
+        calcularSalarioLiquido(salario_3);
+        calcularSalarioLiquido(salario_4);
+        calcularSalarioLiquido(salario_5);
 
         scanner.close();
     }
@@ -28,7 +28,7 @@ public class Main {
 
     static void calcularSalarioLiquido(double salario) {
         double descontoINSS = calcularINSS(salario);
-        double descontoIRPF = calcularIRPF(salario);
+        double descontoIRPF = calcularIRPF(salario - descontoINSS); // Correção (o IR incide sobre o salário - INSS) - Feito após a entrega, se for o caso, desconsiderar esse commit
 
         double salarioLiquido = salario - descontoINSS - descontoIRPF;
 
@@ -141,6 +141,7 @@ public class Main {
             auxSalario -= faixa_5;
             descontoFaixa_5 = faixa_5 * ALIQUOTA_FAIXA_5;
             totalDesconto += descontoFaixa_5;
+            System.out.println(descontoFaixa_5);
         }
 
         if (salario >= PISO_FAIXA_4) {
