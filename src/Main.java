@@ -7,16 +7,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         double salario_1 = receberSalarioInput(scanner);
-        double salario_2 = receberSalarioInput(scanner);
-        double salario_3 = receberSalarioInput(scanner);
-        double salario_4 = receberSalarioInput(scanner);
-        double salario_5 = receberSalarioInput(scanner);
+//        double salario_2 = receberSalarioInput(scanner);
+//        double salario_3 = receberSalarioInput(scanner);
+//        double salario_4 = receberSalarioInput(scanner);
+//        double salario_5 = receberSalarioInput(scanner);
 
         calcularSalarioLiquido(salario_1);
-        calcularSalarioLiquido(salario_2);
-        calcularSalarioLiquido(salario_3);
-        calcularSalarioLiquido(salario_4);
-        calcularSalarioLiquido(salario_5);
+//        calcularSalarioLiquido(salario_2);
+//        calcularSalarioLiquido(salario_3);
+//        calcularSalarioLiquido(salario_4);
+//        calcularSalarioLiquido(salario_5);
 
         scanner.close();
     }
@@ -55,10 +55,12 @@ public class Main {
         final double TETO_FAIXA_2 = 2427.35;
         final double TETO_FAIXA_1 = 1212.00;
 
-        final double ALIQUOTA_FAIXA_4 = 14 / 100;
-        final double ALIQUOTA_FAIXA_3 = 12 / 100;
-        final double ALIQUOTA_FAIXA_2 = 9 / 100;
-        final double ALIQUOTA_FAIXA_1 = 7.5 / 100;
+        // para corrigir "integer division in floating-point context" retirei a divisão da aliquota por 100
+        // fiz a correção apenas para ter isso no código, se for o caso, pode desconsiderar o último commit
+        final double ALIQUOTA_FAIXA_4 = 0.14;
+        final double ALIQUOTA_FAIXA_3 = 0.12;
+        final double ALIQUOTA_FAIXA_2 = 0.09;
+        final double ALIQUOTA_FAIXA_1 = 0.075;
 
         double faixa_1;
         double faixa_2;
@@ -113,11 +115,13 @@ public class Main {
         final double TETO_FAIXA_2 = 2826.65;
         final double TETO_FAIXA_1 = 1903.98;
 
-        final double ALIQUOTA_FAIXA_5 = 27.5 / 100;
-        final double ALIQUOTA_FAIXA_4 = 22.5 / 100;
-        final double ALIQUOTA_FAIXA_3 = 15 / 100;
-        final double ALIQUOTA_FAIXA_2 = 7.5 / 100;
-        final double ALIQUOTA_FAIXA_1 = 0 / 100;
+        // para corrigir "integer division in floating-point context" retirei a divisão da aliquota por 100
+        // fiz a correção apenas para ter isso no código, se for o caso, pode desconsiderar o último commit
+        final double ALIQUOTA_FAIXA_5 = 0.275;
+        final double ALIQUOTA_FAIXA_4 = 0.225;
+        final double ALIQUOTA_FAIXA_3 = 0.15;
+        final double ALIQUOTA_FAIXA_2 = 0.075;
+        final double ALIQUOTA_FAIXA_1 = 0;
 
 
         double faixa_1;
